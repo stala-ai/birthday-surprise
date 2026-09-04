@@ -1,0 +1,383 @@
+/* =========================
+   إعدادات عامة
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fdf2f8;
+    color: #444;
+}
+
+
+/* =========================
+   الصفحات
+   ========================= */
+
+section {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+}
+
+
+/* إخفاء الصفحات بالبداية */
+
+#message,
+#memories,
+#photo-display,
+#final {
+    display: none;
+}
+
+
+/* =========================
+   النصوص
+   ========================= */
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   قلوب الأزرار
+   ========================= */
+
+.heart-btn {
+    width: 75px;
+    height: 70px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.3s ease;
+}
+
+.heart-btn::before {
+    content: "♥";
+
+    position: absolute;
+
+    font-size: 72px;
+
+    color: #ff8fba;
+
+    line-height: 1;
+}
+
+.heart-btn span {
+    position: relative;
+
+    z-index: 1;
+
+    font-size: 24px;
+}
+
+.heart-btn:hover {
+    transform: scale(1.12);
+}
+
+
+/* =========================
+   قلوب الذكريات
+   ========================= */
+
+.memory-container {
+    display: grid;
+
+    grid-template-columns: repeat(5, 75px);
+
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+.memory-btn {
+    width: 65px;
+    height: 65px;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.3s ease;
+}
+
+.memory-btn::before {
+    content: "♥";
+
+    position: absolute;
+
+    font-size: 65px;
+
+    color: #ff8fba;
+
+    line-height: 1;
+}
+
+.memory-btn span {
+    position: relative;
+
+    z-index: 1;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+.memory-btn:hover {
+    transform: scale(1.12);
+}
+
+
+/* =========================
+   الصور
+   ========================= */
+
+#photo-display {
+    gap: 15px;
+}
+
+#memory-photo {
+    max-width: 80%;
+    max-height: 60vh;
+
+    object-fit: contain;
+
+    background: white;
+
+    padding: 8px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+#photo-text {
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    white-space: pre-line;
+
+    color: #555;
+}
+
+
+/* =========================
+   زر آخر مفاجأة
+   ========================= */
+
+.last-btn {
+    display: none;
+
+    border: none;
+
+    background: #ff8fba;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.last-btn:hover {
+    transform: scale(1.08);
+
+    background: #f276a5;
+}
+
+
+/* =========================
+   الصفحة الأخيرة
+   ========================= */
+
+#final {
+    background: linear-gradient(
+        135deg,
+        #fff0f6,
+        #fce4ec,
+        #fff8fb
+    );
+}
+
+.final-card {
+    width: min(700px, 90%);
+
+    padding: 45px 40px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 2px solid #ffd1e2;
+
+    border-radius: 30px;
+
+    box-shadow: 0 10px 35px rgba(255, 143, 186, 0.2);
+
+    animation: finalAppear 1s ease;
+}
+
+.final-hearts {
+    color: #ff8fba;
+
+    font-size: 25px;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 20px;
+}
+
+.final-card h2 {
+    color: #e85d91;
+
+    font-size: 30px;
+
+    margin-bottom: 30px;
+}
+
+.final-message {
+    font-size: 18px;
+
+    line-height: 2;
+
+    color: #555;
+
+    margin-bottom: 18px;
+}
+
+.final-line {
+    width: 80px;
+
+    height: 2px;
+
+    background: #ffb3cd;
+
+    margin: 25px auto;
+}
+
+.final-card h3 {
+    color: #e85d91;
+
+    font-size: 23px;
+
+    margin-bottom: 20px;
+}
+
+.final-love {
+    font-size: 17px;
+
+    color: #777;
+
+    line-height: 1.9;
+}
+
+
+/* حركة الصفحة الأخيرة */
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   الموبايل
+   ========================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    .memory-container {
+        grid-template-columns: repeat(3, 70px);
+        gap: 20px;
+    }
+
+    #memory-photo {
+        max-width: 90%;
+        max-height: 55vh;
+    }
+
+    .final-card {
+        padding: 30px 20px;
+    }
+
+    .final-card h2 {
+        font-size: 24px;
+    }
+
+    .final-message {
+        font-size: 16px;
+    }
+}
