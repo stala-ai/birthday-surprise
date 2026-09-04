@@ -88,7 +88,7 @@ memoryButtons.forEach(function (button, index) {
 
         photoDisplay.style.display = "flex";
 
-      memoryPhoto.src = "./" + (index + 1) + ".jpeg";
+   memoryPhoto.src = "./" + (index + 1) + ".jpeg";
 
         photoText.textContent = photoTexts[index];
 
